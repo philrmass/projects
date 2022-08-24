@@ -4,10 +4,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "preact build",
-    "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
-    "lint": "eslint src"
+    "build": "preact build",
+    "deploy": "gh-pages -d build",
+    "lint": "eslint src",
+    "predeploy": "yarn build",
+    "serve": "sirv build --port 8080 --cors --single"
   },
   "eslintConfig": {
     "extends": "preact"
@@ -22,6 +24,7 @@
     "sirv-cli": "^1.0.3"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "preact": "^10.1.0",
     "preact-render-to-string": "^5.1.2"
   }
